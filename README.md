@@ -1,7 +1,7 @@
 TheAudioDB
 ==========
 
-.Net data bindings for TheAudioDB
+.Net data bindings for [TheAudioDB](http://www.theaudiodb.com/)
 
 Some of features are:
  * Search Artistinfo
