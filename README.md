@@ -13,13 +13,24 @@ For an APIKey go to [TheAudioDB Forum](http://www.theaudiodb.com/forum/viewtopic
 
 Any Examples:
  * // Set a global Apikey
-  API api = new API("apikey"); 
-  Track t2 = new Track("Coldplay", "Don't Panic");
+ * API api = new API("apikey"); 
+ * Track t2 = new Track("Coldplay", "Don't Panic");
  * // or use the Key directly
-  Track t3 = new Track("Coldplay", "Don't Panic", "apikey");
- * Search Discography
- * Search Artistinfo
- * Search Albuminfo
- * Search Trackinfo
- * Search Discography
+ * Track t3 = new Track("Coldplay", "Don't Panic", "apikey");
+
+Artist
+ * Artist a = new Artist("Coldplay");
+ * Artist a1 = new Artist(new Guid("cc197bad-dc9c-440d-a5b5-d52ba2e14234"));
+
+Discography
+ * Discography d = new Discography("Coldplay");
+ * Discography d2 = new Discography(new Guid("cc197bad-dc9c-440d-a5b5-d52ba2e14234"));
+
+Album 
+ * Album ab1 = new Album("Coldplay", "Parachutes");
+ * Album ab2 = new Album("Coldplay", "");
+ * Album ab3 = new Album("", "Parachutes");
+
+Track
+ * Track t = new Track("Coldplay", "Don't Panic");
 
