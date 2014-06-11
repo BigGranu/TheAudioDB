@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Text;
 using TheAudioDB.Data;
 
 namespace TheAudioDB
 {
+  [DataContract]
   public class Artist
   {
-    [JsonProperty("artists")]
+    [DataMember(Name = "artists")]
     public List<ArtistData> List { get; set; }
 
     public Artist()
@@ -52,14 +56,25 @@ namespace TheAudioDB
 
       try
       {
-        string json;
-        using (var w = new WebClient())
+        var request = WebRequest.Create(url);
+        request.Proxy = WebRequest.DefaultWebProxy;
+        request.Credentials = CredentialCache.DefaultCredentials; ;
+        request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+        var response = request.GetResponse();
+        var reader = new StreamReader(response.GetResponseStream());
+
+        string json = reader.ReadToEnd();
+
+        Artist tmp;
+
+        using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(json)))
         {
-          json = w.DownloadString(url);
+          var settings = new DataContractJsonSerializerSettings { UseSimpleDictionaryFormat = true };
+
+          var serializer = new DataContractJsonSerializer(typeof(Artist), settings);
+          tmp = (Artist)serializer.ReadObject(ms);
         }
 
-        var settings = new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore };
-        var tmp = JsonConvert.DeserializeObject<Artist>(json, settings);
         return tmp ?? c;
       }
       catch (Exception)

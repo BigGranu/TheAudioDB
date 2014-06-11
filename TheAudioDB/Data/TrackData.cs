@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace TheAudioDB.Data
 {
+  [DataContract]
   public class TrackData
   {
     public TrackData()
@@ -32,76 +33,147 @@ namespace TheAudioDB.Data
       StrLocked = string.Empty;
     }
 
-    [JsonProperty("idTrack")]
+    [DataMember(Name = "idTrack")]
     public string IdTrack { get; set; }
 
-    [JsonProperty("idAlbum")]
+    [DataMember(Name = "idAlbum")]
     public string IdAlbum { get; set; }
 
-    [JsonProperty("idArtist")]
+    [DataMember(Name = "idArtist")]
     public string IdArtist { get; set; }
 
-    [JsonProperty("strTrack")]
+    [DataMember(Name = "strTrack")]
     public string StrTrack { get; set; }
 
-    [JsonProperty("strAlbum")]
+    [DataMember(Name = "strAlbum")]
     public string StrAlbum { get; set; }
 
-    [JsonProperty("strArtist")]
+    [DataMember(Name = "strArtist")]
     public string StrArtist { get; set; }
 
-    [JsonProperty("intCD")]
-    public int IntCD { get; set; }
+    [DataMember(Name = "intCD")]
+    public int? IntCD { get; set; }
 
-    [JsonProperty("intDuration")]
-    public int IntDuration { get; set; }
+    [DataMember(Name = "intDuration")]
+    public int? IntDuration { get; set; }
 
-    [JsonProperty("strGenre")]
+    [DataMember(Name = "strGenre")]
     public string StrGenre { get; set; }
 
-    [JsonProperty("strDescriptionEN")]
+    [DataMember(Name = "strDescriptionEN")]
     public string StrDescriptionEN { get; set; }
 
-    [JsonProperty("strTrackThumb")]
+    [DataMember(Name = "strTrackThumb")]
     public string StrTrackThumb { get; set; }
 
-    [JsonProperty("strTrackLyrics")]
+    [DataMember(Name = "strTrackLyrics")]
     public string StrTrackLyrics { get; set; }
 
-    [JsonProperty("strMusicVid")]
+    [DataMember(Name = "strMusicVid")]
     public string StrMusicVid { get; set; }
 
-    [JsonProperty("strMusicVidDirector")]
+    [DataMember(Name = "strMusicVidDirector")]
     public string StrMusicVidDirector { get; set; }
 
-    [JsonProperty("strMusicVidCompany")]
+    [DataMember(Name = "strMusicVidCompany")]
     public string StrMusicVidCompany { get; set; }
 
-    [JsonProperty("strMusicVidScreen1")]
+    [DataMember(Name = "strMusicVidScreen1")]
     public string StrMusicVidScreen1 { get; set; }
 
-    [JsonProperty("strMusicVidScreen2")]
+    [DataMember(Name = "strMusicVidScreen2")]
     public string StrMusicVidScreen2 { get; set; }
 
-    [JsonProperty("strMusicVidScreen3")]
+    [DataMember(Name = "strMusicVidScreen3")]
     public string StrMusicVidScreen3 { get; set; }
 
-    [JsonProperty("intTrackNumber")]
-    public int IntTrackNumber { get; set; }
+    [DataMember(Name = "intTrackNumber")]
+    public int? IntTrackNumber { get; set; }
 
-    [JsonProperty("intLoved")]
-    public int IntLoved { get; set; }
+    [DataMember(Name = "intLoved")]
+    public int? IntLoved { get; set; }
 
-    [JsonProperty("strMusicBrainzID")]
+    [DataMember(Name = "strMusicBrainzID")]
     public string StrMusicBrainzID { get; set; }
 
-    [JsonProperty("strMusicBrainzAlbumID")]
+    [DataMember(Name = "strMusicBrainzAlbumID")]
     public string StrMusicBrainzAlbumID { get; set; }
 
-    [JsonProperty("strMusicBrainzArtistID")]
+    [DataMember(Name = "strMusicBrainzArtistID")]
     public string StrMusicBrainzArtistID { get; set; }
 
-    [JsonProperty("strLocked")]
+    [DataMember(Name = "strLocked")]
     public string StrLocked { get; set; }
+    //[DataMember(EmitDefaultValue = false)]
+    //public string idTrack { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string idAlbum { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string idArtist { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strTrack { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strAlbum { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strArtist { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public int? intCD { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public int? intDuration { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strGenre { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strDescriptionEN { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strTrackThumb { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strTrackLyrics { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicVid { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicVidDirector { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicVidCompany { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicVidScreen1 { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicVidScreen2 { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicVidScreen3 { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public int? intTrackNumber { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public int? intLoved { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicBrainzID { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicBrainzAlbumID { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strMusicBrainzArtistID { get; set; }
+
+    //[DataMember(EmitDefaultValue = false)]
+    //public string strLocked { get; set; }
   }
 }

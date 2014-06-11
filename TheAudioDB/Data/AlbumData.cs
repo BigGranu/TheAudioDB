@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace TheAudioDB.Data
 {
+  [DataContract]
   public class AlbumData
   {
     public AlbumData()
@@ -47,121 +48,121 @@ namespace TheAudioDB.Data
       StrDescription = string.Empty;
     }
 
-    [JsonProperty("idAlbum")]
+    [DataMember(Name = "idAlbum")]
     public string IdAlbum { get; set; }
 
-    [JsonProperty("idArtist")]
+    [DataMember(Name = "idArtist")]
     public string IdArtist { get; set; }
 
-    [JsonProperty("strAlbum")]
+    [DataMember(Name = "strAlbum")]
     public string StrAlbum { get; set; }
 
-    [JsonProperty("strArtist")]
+    [DataMember(Name = "strArtist")]
     public string StrArtist { get; set; }
 
-    [JsonProperty("intYearReleased")]
-    public int IntYearReleased { get; set; }
+    [DataMember(Name = "intYearReleased")]
+    public int? IntYearReleased { get; set; }
 
-    [JsonProperty("strGenre")]
+    [DataMember(Name = "strGenre")]
     public string StrGenre { get; set; }
 
-    [JsonProperty("strSubGenre")]
+    [DataMember(Name = "strSubGenre")]
     public string StrSubGenre { get; set; }
 
-    [JsonProperty("strReleaseFormat")]
+    [DataMember(Name = "strReleaseFormat")]
     public string StrReleaseFormat { get; set; }
 
-    [JsonProperty("intSales")]
-    public int IntSales { get; set; }
+    [DataMember(Name = "intSales")]
+    public int? IntSales { get; set; }
 
-    [JsonProperty("strAlbumThumb")]
+    [DataMember(Name = "strAlbumThumb")]
     public string StrAlbumThumb { get; set; }
 
-    [JsonProperty("strAlbumCDart")]
+    [DataMember(Name = "strAlbumCDart")]
     public object StrAlbumCDart { get; set; }
 
-    [JsonProperty("strDescriptionEN")]
+    [DataMember(Name = "strDescriptionEN")]
     public string StrDescriptionEN { get; set; }
 
-    [JsonProperty("strDescriptionDE")]
+    [DataMember(Name = "strDescriptionDE")]
     public string StrDescriptionDE { get; set; }
 
-    [JsonProperty("strDescriptionFR")]
+    [DataMember(Name = "strDescriptionFR")]
     public string StrDescriptionFR { get; set; }
 
-    [JsonProperty("strDescriptionCN")]
+    [DataMember(Name = "strDescriptionCN")]
     public string StrDescriptionCN { get; set; }
 
-    [JsonProperty("strDescriptionIT")]
+    [DataMember(Name = "strDescriptionIT")]
     public string StrDescriptionIT { get; set; }
 
-    [JsonProperty("strDescriptionJP")]
+    [DataMember(Name = "strDescriptionJP")]
     public string StrDescriptionJP { get; set; }
 
-    [JsonProperty("strDescriptionRU")]
+    [DataMember(Name = "strDescriptionRU")]
     public string StrDescriptionRU { get; set; }
 
-    [JsonProperty("strDescriptionES")]
+    [DataMember(Name = "strDescriptionES")]
     public string StrDescriptionES { get; set; }
 
-    [JsonProperty("strDescriptionPT")]
+    [DataMember(Name = "strDescriptionPT")]
     public string StrDescriptionPT { get; set; }
 
-    [JsonProperty("strDescriptionSE")]
+    [DataMember(Name = "strDescriptionSE")]
     public string StrDescriptionSE { get; set; }
 
-    [JsonProperty("strDescriptionNL")]
+    [DataMember(Name = "strDescriptionNL")]
     public string StrDescriptionNL { get; set; }
 
-    [JsonProperty("strDescriptionHU")]
+    [DataMember(Name = "strDescriptionHU")]
     public string StrDescriptionHU { get; set; }
 
-    [JsonProperty("strDescriptionNO")]
+    [DataMember(Name = "strDescriptionNO")]
     public string StrDescriptionNO { get; set; }
 
-    [JsonProperty("strDescriptionIL")]
+    [DataMember(Name = "strDescriptionIL")]
     public string StrDescriptionIL { get; set; }
 
-    [JsonProperty("strDescriptionPL")]
+    [DataMember(Name = "strDescriptionPL")]
     public string StrDescriptionPL { get; set; }
 
-    [JsonProperty("intLoved")]
-    public int IntLoved { get; set; }
+    [DataMember(Name = "intLoved")]
+    public int? IntLoved { get; set; }
 
-    [JsonProperty("intScore")]
-    public int IntScore { get; set; }
+    [DataMember(Name = "intScore")]
+    public int? IntScore { get; set; }
 
-    [JsonProperty("strReview")]
+    [DataMember(Name = "strReview")]
     public string StrReview { get; set; }
 
-    [JsonProperty("strMood")]
+    [DataMember(Name = "strMood")]
     public string StrMood { get; set; }
 
-    [JsonProperty("strTheme")]
+    [DataMember(Name = "strTheme")]
     public object StrTheme { get; set; }
 
-    [JsonProperty("strSpeed")]
+    [DataMember(Name = "strSpeed")]
     public string StrSpeed { get; set; }
 
-    [JsonProperty("strLocation")]
+    [DataMember(Name = "strLocation")]
     public object StrLocation { get; set; }
 
-    [JsonProperty("strMusicBrainzID")]
+    [DataMember(Name = "strMusicBrainzID")]
     public string StrMusicBrainzID { get; set; }
 
-    [JsonProperty("strMusicBrainzArtistID")]
+    [DataMember(Name = "strMusicBrainzArtistID")]
     public string StrMusicBrainzArtistID { get; set; }
 
-    [JsonProperty("strItunesID")]
+    [DataMember(Name = "strItunesID")]
     public object StrItunesID { get; set; }
 
-    [JsonProperty("strAmazonID")]
+    [DataMember(Name = "strAmazonID")]
     public object StrAmazonID { get; set; }
 
-    [JsonProperty("strLocked")]
+    [DataMember(Name = "strLocked")]
     public string StrLocked { get; set; }
 
-    [JsonProperty("strDescription")]
+    [DataMember(Name = "strDescription")]
     public object StrDescription { get; set; }
   }
 }

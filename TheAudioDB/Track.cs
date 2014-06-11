@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Text;
 using TheAudioDB.Data;
 
 namespace TheAudioDB
 {
+  [DataContract]
   public class Track
   {
-    [JsonProperty("track")]
+    [DataMember(Name = "track")]
     public List<TrackData> List { get; set; }
+
 
     public Track()
     {
@@ -32,20 +37,31 @@ namespace TheAudioDB
 
     private static Track GetTrack(string url)
     {
-      var c = new Track {List = new List<TrackData>()};
+      var c = new Track { List = new List<TrackData>() };
       c.List.Add(new TrackData());
 
       try
       {
-        string json;
-        using (var w = new WebClient())
+        var request = WebRequest.Create(url);
+        request.Proxy = WebRequest.DefaultWebProxy;
+        request.Credentials = CredentialCache.DefaultCredentials; ;
+        request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+        var response = request.GetResponse();
+        var reader = new StreamReader(response.GetResponseStream());
+
+        string json = reader.ReadToEnd();
+
+        Track tmp;
+
+        using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(json)))
         {
-          json = w.DownloadString(url);
+          var settings = new DataContractJsonSerializerSettings {UseSimpleDictionaryFormat = true};
+      
+          var serializer = new DataContractJsonSerializer(typeof(Track), settings);
+          tmp = (Track)serializer.ReadObject(ms);          
         }
 
-        var settings = new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore };
-        var tmp = JsonConvert.DeserializeObject<Track>(json, settings);
-        return tmp ?? c;
+         return tmp ?? c;
       }
       catch (Exception)
       {

@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace TheAudioDB.Data
 {
+  [DataContract]
   public class DiscographyData
   {
     public DiscographyData()
@@ -10,10 +11,10 @@ namespace TheAudioDB.Data
       IntYearReleased = 0;
     }
 
-    [JsonProperty("strAlbum")]
+    [DataMember(Name = "strAlbum")]
     public string StrAlbum { get; set; }
 
-    [JsonProperty("intYearReleased")]
-    public int IntYearReleased { get; set; }
+    [DataMember(Name = "intYearReleased")]
+    public int? IntYearReleased { get; set; }
   }
 }
