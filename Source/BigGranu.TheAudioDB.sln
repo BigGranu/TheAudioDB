@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheAudioDB", "TheAudioDB\TheAudioDB.csproj", "{1E1600DC-5F4E-4A20-B4BE-F70648A492F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigGranu.TheAudioDB", "BigGranu.TheAudioDB\BigGranu.TheAudioDB.csproj", "{1E1600DC-5F4E-4A20-B4BE-F70648A492F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A63BE94D-D593-44F6-9D0A-5FE36C59EF86}"
 	ProjectSection(SolutionItems) = preProject
